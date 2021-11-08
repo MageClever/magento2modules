@@ -1,0 +1,22 @@
+{
+    "name": "mageclever/module-hideproductbytype",
+    "description": "Hide product at front-end page by product type",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "MageClever",
+            "email": "thainv.developer@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MageClever\\HideProductByType\\": ""
+        }
+    }
+}

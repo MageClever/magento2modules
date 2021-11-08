@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="additionalFieldsProviderForElasticsearch" type="Magento\AdvancedSearch\Model\Adapter\DataMapper\AdditionalFieldsProvider">
+        <arguments>
+            <argument name="fieldsProviders" xsi:type="array">
+                <item name="custom_field" xsi:type="object">MageClever\HideProductByType\Model\Adapter\DataMapper\CustomDataProvider</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Elasticsearch7\Model\Client\Elasticsearch">
+		<plugin name="customize_elastic7_search_query" type="MageClever\HideProductByType\Plugin\Magento\Elasticsearch7\Model\Client\Elasticsearch" sortOrder="1" disabled="false"/>
+	</type>
+	<type name="Amasty\ElasticSearch\Model\Indexer\Data\Product\ProductDataMapper">
+		<plugin name="customize_amasty_data_mapper" type="MageClever\HideProductByType\Plugin\Amasty\ElasticSearch\Model\Indexer\Data\Product\ProductDataMapper" sortOrder="1" disabled="false"/>
+	</type>
+	<type name="Amasty\ElasticSearch\Model\Client\Elasticsearch">
+		<plugin name="customize_amasty_search_query" type="MageClever\HideProductByType\Plugin\Amasty\ElasticSearch\Model\Client\Elasticsearch" sortOrder="1" disabled="false"/>
+	</type>
+	<type name="Magento\Catalog\Controller\Product\View">
+		<plugin name="customize_product_view" type="MageClever\HideProductByType\Plugin\Magento\Catalog\Controller\Product\View" sortOrder="1" disabled="false"/>
+	</type>
+</config>

@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="mageclever" translate="label" sortOrder="999">
+			<label>Mage Clever</label>
+		</tab>
+		<section id="hide_product_by_type" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+			<label>Hide product by type</label>
+			<tab>mageclever</tab>
+			<resource>MageClever_HideProductByType::config_mageclever_hideproductbytype</resource>
+			<group id="general" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>General</label>
+				<field id="is_enabled" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Is enabled</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+			<group id="detail_config" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>Detail Config</label>
+				<field id="product_type_id" type="multiselect" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Hide product with type</label>
+					<comment/>
+					<source_model>MageClever\HideProductByType\Model\Config\Source\ProductTypeId</source_model>
+				</field>
+				<field id="hide_in_page" type="multiselect" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Hide in page</label>
+					<comment/>
+					<source_model>MageClever\HideProductByType\Model\Config\Source\HideInPage</source_model>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

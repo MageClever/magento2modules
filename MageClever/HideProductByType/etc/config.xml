@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<hide_product_by_type>
+			<general>
+				<is_enabled/>
+			</general>
+			<detail_config>
+				<product_type_id/>
+				<hide_in_page/>
+			</detail_config>
+		</hide_product_by_type>
+	</default>
+</config>
