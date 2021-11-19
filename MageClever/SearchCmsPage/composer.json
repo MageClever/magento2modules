@@ -1,0 +1,22 @@
+{
+    "name": "mageclever/module-searchcmspage",
+    "description": "Search CMS page with elastic search",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "MageClever",
+            "email": "thainv.developer@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MageClever\\SearchCmsPage\\": ""
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<?php
+/* @var $block \MageClever\SearchCmsPage\Block\Result */
+/* @var $page \Magento\CMS\Model\Page */
+$pages = $block->getCmsPageCollection();
+?>
+<?php if ($pages && $pages->count() > 0): ?>
+    <h3><?= __('Cms Pages') ?></h3>
+    <?php foreach ($pages as $page): ?>
+        <div class="cms-page">
+            <a href="/<?= $page->getIdentifier() ?>">
+                <?= $page->getTitle() ?>
+            </a>
+        </div>
+    <?php endforeach; ?>
+<?php endif; ?>

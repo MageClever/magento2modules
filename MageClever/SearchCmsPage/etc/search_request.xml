@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<requests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:framework:Search/etc/search_request.xsd">
+    <request query="mageclever_cms_search_container" index="mageclever_cms_pages_indexer">
+        <dimensions>
+            <dimension name="scope" value="default"/>
+        </dimensions>
+        <queries>
+            <query xsi:type="boolQuery" name="mageclever_cms_search_container" boost="1">
+                <queryReference clause="should" ref="search"/>
+                <queryReference clause="must" ref="is_active"/>
+            </query>
+            <query xsi:type="matchQuery" value="$search_term$" name="search">
+                <match field="*"/>
+                <match field="title" matchCondition="match_phrase_prefix"/>
+                <match field="content" matchCondition="match_phrase_prefix"/>
+            </query>
+            <query xsi:type="filteredQuery" name="is_active">
+                <filterReference clause="must" ref="is_active_filter"/>
+            </query>
+        </queries>
+        <filters>
+            <filter xsi:type="termFilter" name="is_active_filter" field="is_active" value="1"/>
+        </filters>
+        <from>0</from>
+        <size>10000</size>
+    </request>
+</requests>

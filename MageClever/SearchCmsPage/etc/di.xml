@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="MageClever\SearchCmsPage\Model\Indexer\CmsPageFulltext">
+        <arguments>
+            <argument name="dimensionProvider" xsi:type="object" shared="false">Magento\Store\Model\StoreDimensionProvider</argument>
+        </arguments>
+    </type>
+    <type name="MageClever\SearchCmsPage\Model\Indexer\IndexerHandlerFactory">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="elasticsearch5" xsi:type="string">MageClever\SearchCmsPage\Model\Indexer\IndexerHandler</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageClever\SearchCmsPage\Model\Indexer\IndexerHandlerFactory">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="elasticsearch6" xsi:type="string">MageClever\SearchCmsPage\Model\Indexer\IndexerHandler</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageClever\SearchCmsPage\Model\Indexer\IndexerHandlerFactory">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="elasticsearch7" xsi:type="string">MageClever\SearchCmsPage\Model\Indexer\IndexerHandler</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Elasticsearch\Model\Adapter\FieldMapper\FieldMapperResolver">
+        <arguments>
+            <argument name="fieldMappers" xsi:type="array">
+                <item name="mageclever_cms_pages_indexer" xsi:type="string">MageClever\SearchCmsPage\Model\Adapter\FieldMapper\CmsPagesFieldMapperProxy</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Elasticsearch\SearchAdapter\Aggregation\Builder">
+        <arguments>
+            <argument name="dataProviderContainer" xsi:type="array">
+                <item name="mageclever_cms_pages_indexer" xsi:type="object">Magento\Elasticsearch\SearchAdapter\Dynamic\DataProvider</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
