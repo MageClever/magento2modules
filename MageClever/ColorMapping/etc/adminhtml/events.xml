@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="adminhtml_product_attribute_types">
+        <observer name="process_extra_swatch_input_type" instance="MageClever\ColorMapping\Observer\Backend\AddExtraSwatchType" />
+    </event>
+    <event name="color_relationship_save_after">
+        <observer name="assign_parent_color_to_product" instance="MageClever\ColorMapping\Observer\Backend\ColorRelationshipSaveAfter"/>
+    </event>
+    <event name="color_relationship_delete_after">
+        <observer name="unassigned_parent_color_to_product" instance="MageClever\ColorMapping\Observer\Backend\ColorRelationshipDeleteAfter"/>
+    </event>
+    <event name="catalog_product_save_before">
+        <observer name="assign_product_to_parent_color" instance="MageClever\ColorMapping\Observer\Backend\ProductSaveBefore"/>
+    </event>
+</config>

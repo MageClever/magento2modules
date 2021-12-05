@@ -1,0 +1,22 @@
+{
+    "name": "mageclever/module-colormapping",
+    "description": "Mapping multi child colors to parent color",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "MageClever",
+            "email": "thainv.developer@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+          "registration.php"
+        ],
+        "psr-4": {
+            "MageClever\\ColorMapping\\": ""
+        }
+    }
+}

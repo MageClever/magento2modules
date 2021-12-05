@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="MageClever\ColorMapping\Api\ColorRelationshipRepositoryInterface" type="MageClever\ColorMapping\Model\ColorRelationshipRepository"/>
+	<preference for="MageClever\ColorMapping\Api\Data\ColorRelationshipInterface" type="MageClever\ColorMapping\Model\Data\ColorRelationship"/>
+	<preference for="MageClever\ColorMapping\Api\Data\ColorRelationshipSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="MageClever\ColorMapping\Model\ResourceModel\ColorRelationship\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">mageclever_colormapping_colorrelationship</argument>
+			<argument name="resourceModel" xsi:type="string">MageClever\ColorMapping\Model\ResourceModel\ColorRelationship\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="mageclever_colormapping_colorrelationship_listing_data_source" xsi:type="string">MageClever\ColorMapping\Model\ResourceModel\ColorRelationship\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

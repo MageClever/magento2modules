@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="mageclever" translate="label" sortOrder="999">
+			<label>Mage Clever</label>
+		</tab>
+		<section id="color_mapping" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+			<label>Color mapping</label>
+			<tab>mageclever</tab>
+			<resource>MageClever_ColorMapping::config_mageclever_colormapping</resource>
+			<group id="general" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>General</label>
+				<field id="is_enabled" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Is enabled</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+			<group id="declare" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>Declare</label>
+				<field id="parent_color" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Parent color</label>
+					<comment/>
+					<source_model>MageClever\ColorMapping\Model\Config\Source\ProductAttributes</source_model>
+				</field>
+				<field id="child_color" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Child color</label>
+					<comment/>
+                    <source_model>MageClever\ColorMapping\Model\Config\Source\ProductAttributes</source_model>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

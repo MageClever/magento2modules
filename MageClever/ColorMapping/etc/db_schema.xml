@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="mageclever_colormapping_colorrelationship" resource="default" engine="innodb" comment="mageclever_colormapping_colorrelationship Table">
+		<column xsi:type="smallint" name="colorrelationship_id" padding="6" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="colorrelationship_id"/>
+		</constraint>
+		<column name="parent_color_option_id" nullable="true" xsi:type="int" comment="option id of parent color attribute" identity="false" unsigned="true"/>
+		<column name="parent_color_option_text" nullable="true" xsi:type="varchar" comment="parent_color_option_text" length="255"/>
+		<column name="child_color_option_id" nullable="true" xsi:type="text" comment="child_color_option_id"/>
+		<column name="child_color_option_text" nullable="true" xsi:type="text" comment="child_color_option_text"/>
+        <constraint xsi:type="unique" referenceId="PARENT_COLOR_OPTION_ID">
+            <column name="parent_color_option_id"/>
+        </constraint>
+	</table>
+</schema>

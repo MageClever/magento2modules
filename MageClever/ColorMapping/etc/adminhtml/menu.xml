@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="MageClever::top_level" title="MageClever" module="MageClever_ColorMapping" sortOrder="9999" resource="Magento_Backend::content"/>
+		<add id="MageClever_ColorMapping::mageclever_colormapping_colorrelationship" title="Color Mapping" module="MageClever_ColorMapping" sortOrder="9999" resource="Magento_Backend::content" parent="MageClever::top_level" action="mageclever_colormapping/colorrelationship/index"/>
+	</menu>
+</config>
